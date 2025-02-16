@@ -22,4 +22,6 @@ export function useMovieDetails(movieId: number) {
       setMovieDetails(data);
     });
   }, [movieId]);
+
+  return movieDetails;
 }
