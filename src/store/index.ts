@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import favorito from "./reducers/favorito";
+import favorite from "./reducers/favorite";
 
 export default configureStore({
   reducer: {
-    favorito,
+    favorite,
   },
 });

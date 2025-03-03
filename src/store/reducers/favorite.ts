@@ -5,8 +5,8 @@ interface InitialState {
   movies: Movie[];
 }
 
-export const favoritoSlice: any = createSlice({
-  name: "favorito",
+export const favoriteSlice: any = createSlice({
+  name: "favorite",
   initialState: { movies: [] } as InitialState,
   reducers: {
     addMovie: (state, action) => {
@@ -24,5 +24,5 @@ export const favoritoSlice: any = createSlice({
   },
 });
 
-export const { addMovie, removeMovie } = favoritoSlice.actions;
-export default favoritoSlice.reducer;
+export const { addMovie, removeMovie } = favoriteSlice.actions;
+export default favoriteSlice.reducer;

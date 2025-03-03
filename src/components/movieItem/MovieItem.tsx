@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { Movie } from "../../interfaces/movie.interface";
 import style from "./MovieItem.module.css";
 import { useDispatch } from "react-redux";
-import { addMovie } from "../../store/reducers/favorito";
+import { addMovie } from "../../store/reducers/favorite";
 
 interface MovieProps {
   movie: Movie;
