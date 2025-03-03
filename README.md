@@ -1,4 +1,4 @@
-# 🎬 Projeto de Lista de Filmes - React.js
+# 🎬 Projeto de Lista de Filmes SPA - React.js
 
 ![Badge em Desenvolvimento](https://img.shields.io/badge/status-em%20desenvolvimento-yellow?style=for-the-badge)
 
