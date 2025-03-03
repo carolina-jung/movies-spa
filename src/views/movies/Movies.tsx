@@ -1,11 +1,12 @@
 import { MovieItem } from "../../components/movieItem/MovieItem";
 import { useMovies } from "../../hooks/useMovies";
+import { Movie } from "../../interfaces/movie.interface";
 import style from "./Movies.module.css";
 
 export function Movies() {
-  const movies = useMovies();
+  const { data: movies, isLoading } = useMovies();
 
-  if (!movies) {
+  if (isLoading) {
     return <p>Carregando...</p>;
   }
 
@@ -13,7 +14,7 @@ export function Movies() {
     <section>
       <h1>Filmes populares</h1>
       <div className={style.moviesList}>
-        {movies.map((movie) => (
+        {movies.map((movie: Movie) => (
           <MovieItem key={movie.id} movie={movie} />
         ))}
       </div>

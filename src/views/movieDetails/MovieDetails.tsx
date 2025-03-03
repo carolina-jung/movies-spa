@@ -4,9 +4,9 @@ import style from "./MovieDetails.module.css";
 
 export function MovieDetails() {
   const { id } = useParams();
-  const movie = useMovieDetails(id ? Number(id) : 0);
+  const { data: movie, isLoading } = useMovieDetails(id ? Number(id) : 0);
 
-  if (!movie) {
+  if (isLoading) {
     return <p>Carregando...</p>;
   }
 

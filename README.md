@@ -10,7 +10,7 @@ A aplicação exibe uma lista de filmes mais assistidos, consumindo dados da API
 - Front-end: React.js
 - Gerenciamento de rotas: React Router
 - Consumo de API: Fetch API / Axios
-- Estilização: CSS Modules
+- Cache e gerenciamento de estado assíncrono: React Query
 
 ## 📂 Executar o Projeto
 
