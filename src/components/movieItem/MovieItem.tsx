@@ -1,8 +1,8 @@
 import { Link } from "react-router";
 import { Movie } from "../../interfaces/movie.interface";
 import style from "./MovieItem.module.css";
-import { useDispatch } from "react-redux";
-import { addMovie } from "../../store/reducers/favorite";
+import { useDispatch, useSelector } from "react-redux";
+import { addMovie, removeMovie } from "../../store/reducers/favorite";
 
 interface MovieProps {
   movie: Movie;
@@ -10,6 +10,23 @@ interface MovieProps {
 
 export function MovieItem({ movie }: MovieProps) {
   const dispatch = useDispatch();
+  const favoriteMovies = useSelector((state: any) => state.favorite.movies);
+
+  function handleFavoriteButton(): any {
+    if (favoriteMovies.find((m: Movie) => m.id === movie.id)) {
+      return (
+        <button onClick={() => dispatch(removeMovie(movie))}>
+          Remover dos favoritos
+        </button>
+      );
+    }
+
+    return (
+      <button onClick={() => dispatch(addMovie(movie))}>
+        Adicionar aos favoritos
+      </button>
+    );
+  }
 
   return (
     <div className={style.movieItem}>
@@ -24,9 +41,7 @@ export function MovieItem({ movie }: MovieProps) {
         <Link className={style.btnDetails} to={`/filmes/${movie.id}`}>
           Ver detalhes
         </Link>
-        <button onClick={() => dispatch(addMovie(movie))}>
-          Adicionar aos favoritos
-        </button>
+        {handleFavoriteButton()}
       </p>
     </div>
   );

@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Movie } from "../../interfaces/movie.interface";
 
-interface InitialState {
+interface FavoritesState {
   movies: Movie[];
 }
 
 export const favoriteSlice: any = createSlice({
   name: "favorite",
-  initialState: { movies: [] } as InitialState,
+  initialState: { movies: [] } as FavoritesState,
   reducers: {
     addMovie: (state, action) => {
       if (!state.movies.find((movie) => movie.id === action.payload.id)) {
