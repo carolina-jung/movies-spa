@@ -1,9 +1,5 @@
 import { RootLayout } from "./views/RootLayout";
-import { Home } from "./views/Home";
-import { Movies } from "./views/movies/Movies";
 import { createBrowserRouter } from "react-router";
-import { MovieDetails } from "./views/movieDetails/MovieDetails";
-import { Favorites } from "./views/favorites/Favorites";
 
 export const routes = createBrowserRouter([
   {
@@ -12,19 +8,41 @@ export const routes = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        lazy: async () => {
+          const { Home } = await import("./views/Home");
+          return {
+            Component: Home,
+          };
+        },
       },
       {
         path: "/filmes",
-        element: <Movies />,
+        lazy: async () => {
+          const { Movies } = await import("./views/movies/Movies");
+          return {
+            Component: Movies,
+          };
+        },
       },
       {
         path: "/filmes/:id",
-        element: <MovieDetails />,
+        lazy: async () => {
+          const { MovieDetails } = await import(
+            "./views/movieDetails/MovieDetails"
+          );
+          return {
+            Component: MovieDetails,
+          };
+        },
       },
       {
         path: "/favoritos",
-        element: <Favorites />,
+        lazy: async () => {
+          const { Favorites } = await import("./views/favorites/Favorites");
+          return {
+            Component: Favorites,
+          };
+        },
       },
     ],
   },
