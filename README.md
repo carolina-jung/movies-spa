@@ -1,6 +1,6 @@
 # 🎬 Projeto de Lista de Filmes SPA - React.js
 
-![Badge em Desenvolvimento](https://img.shields.io/badge/status-em%20desenvolvimento-yellow?style=for-the-badge)
+![Badge Concluído](https://img.shields.io/badge/status-concluído-green?style=for-the-badge)
 
 Este projeto foi desenvolvido na disciplina _Plataformas Front End - React_ da pós-graduação em Desenvolvimento Full-Stack pela PUC Minas EAD.
 A aplicação exibe uma lista de filmes mais assistidos, consumindo dados da API [The Movie Database (TMDb)](https://www.themoviedb.org/). Além disso, permite a seleção e visualização de filmes favoritos em uma página dedicada.
